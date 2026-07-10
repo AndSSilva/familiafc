@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Família FC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>Família FC</h1>
+    <p>Experimento de avaliação pós-jogo</p>
+  </header>
+
+
+  <!-- TELA 1 - CADASTRO -->
+  <section id="tela-cadastro" class="tela ativa">
+
+    <h2>Entrar no jogo</h2>
+
+    <div class="card">
+      <p>
+        📅 10/07/2026<br>
+        ⏰ 21:00<br>
+        📍 Planet Ball
+      </p>
+    </div>
+
+    <label>
+      Nome
+      <input id="nome" type="text" placeholder="Digite seu nome">
+    </label>
+
+    <label>
+      Time
+      <select id="time">
+        <option value="Verde">🟢 Verde</option>
+        <option value="Vermelho">🔴 Vermelho</option>
+      </select>
+    </label>
+
+
+    <label>
+      Posição
+      <select id="posicao">
+        <option value="Linha">⚽ Linha</option>
+        <option value="Goleiro">🧤 Goleiro</option>
+      </select>
+    </label>
+
+
+    <button id="btn-cadastrar">
+      Confirmar entrada
+    </button>
+
+    <div id="mensagem-cadastro"></div>
+
+  </section>
+
+
+
+
+  <!-- TELA 2 - SALA DE ESPERA -->
+  <section id="tela-espera" class="tela">
+
+    <h2>Sala de espera</h2>
+
+    <div class="vagas">
+      <p>⚽ Linha: <span id="contador-linha">0/16</span></p>
+      <p>🧤 Goleiro: <span id="contador-goleiro">0/2</span></p>
+    </div>
+
+
+    <div class="times">
+
+      <div>
+        <h3>🟢 Verde</h3>
+        <ul id="lista-verde"></ul>
+      </div>
+
+      <div>
+        <h3>🔴 Vermelho</h3>
+        <ul id="lista-vermelho"></ul>
+      </div>
+
+    </div>
+
+
+    <button id="btn-jogar">
+      Já joguei — avaliar agora
+    </button>
+    <p id="aguardando-jogadores"></p>
+
+  </section>
+
+
+
+
+
+  <!-- TELA 3 - ESTATÍSTICAS -->
+  <section id="tela-stats" class="tela">
+
+    <h2>Minhas estatísticas</h2>
+
+    <label>
+      ⚽ Gols
+      <input id="gols" type="number" min="0" value="0">
+    </label>
+
+
+    <label>
+      🅰️ Assistências
+      <input id="assistencias" type="number" min="0" value="0">
+    </label>
+
+
+    <button id="btn-salvar-stats">
+      Continuar
+    </button>
+
+  </section>
+
+
+
+
+
+  <!-- TELA 4 - AVALIAÇÕES -->
+  <section id="tela-avaliacao" class="tela">
+
+    <h2>Avaliar jogadores</h2>
+
+    <div id="jogador-avaliado">
+
+      <h3 id="nome-avaliado"></h3>
+
+      <div id="qualidades">
+        <!-- preenchido pelo JS -->
+      </div>
+
+
+      <button id="btn-enviar-avaliacao">
+        Enviar avaliação
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <!-- TELA 5 - FINAL -->
+  <section id="tela-final" class="tela">
+
+    <h2>Obrigado! 🙌</h2>
+
+    <p>
+      Suas respostas foram registradas.
+    </p>
+
+    <p>
+      O experimento Família FC foi concluído.
+    </p>
+
+  </section>
+
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
