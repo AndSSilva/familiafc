@@ -46,35 +46,47 @@ let indiceAvaliacao = 0;
 // INICIALIZAÇÃO
 // ==============================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
+    const salvo = localStorage.getItem("familia_fc_player");
 
-    const salvo =
-        localStorage.getItem(
-            "familia_fc_player"
+    if (!salvo) {
+        mostrarTela("tela-cadastro");
+        return;
+    }
+
+    jogadorAtual = JSON.parse(salvo);
+
+    try {
+
+        const resposta = await fetch(API_URL + "?action=participants");
+        const participantes = await resposta.json();
+
+        const existe = participantes.some(
+            p => p.id === jogadorAtual.id
         );
 
+        if (!existe) {
 
-    if (salvo) {
+            localStorage.removeItem("familia_fc_player");
+            jogadorAtual = null;
 
+            mostrarTela("tela-cadastro");
+            return;
+        }
 
-        jogadorAtual =
-            JSON.parse(salvo);
-
-
-        mostrarTela(
-            "tela-espera"
-        );
-
-
+        mostrarTela("tela-espera");
         carregarSala();
 
+    } catch (erro) {
+
+        console.error(erro);
+
+        mostrarTela("tela-cadastro");
 
     }
 
-
 });
-
 
 // Atualiza sala automaticamente
 setInterval(() => {
