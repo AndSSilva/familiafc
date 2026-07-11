@@ -614,7 +614,7 @@ async function salvarEstatisticas(){
             if(completo){
 
 
-                iniciarAvaliacoes();
+                /*iniciarAvaliacoes();
 
 
             } else {
@@ -627,7 +627,16 @@ async function salvarEstatisticas(){
 
                 alert(
                     "Estatísticas salvas. Aguardando todos os jogadores entrarem."
-                );
+                );*/
+                if(resultado.sucesso){
+
+    iniciarAvaliacoes();
+
+} else {
+
+    alert(resultado.erro);
+
+}
 
 
             }
