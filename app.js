@@ -601,8 +601,18 @@ async function salvarEstatisticas(){
 
 
 
+if(resultado.sucesso){
 
-        if(resultado.sucesso){
+    iniciarAvaliacoes();
+
+} else {
+
+    alert(
+        resultado.erro
+    );
+
+}
+        /*if(resultado.sucesso){
 
 
             const completo =
@@ -614,7 +624,7 @@ async function salvarEstatisticas(){
             if(completo){
 
 
-                /*iniciarAvaliacoes();
+                iniciarAvaliacoes();
 
 
             } else {
@@ -627,16 +637,7 @@ async function salvarEstatisticas(){
 
                 alert(
                     "Estatísticas salvas. Aguardando todos os jogadores entrarem."
-                );*/
-                if(resultado.sucesso){
-
-    iniciarAvaliacoes();
-
-} else {
-
-    alert(resultado.erro);
-
-}
+                );
 
 
             }
@@ -651,7 +652,7 @@ async function salvarEstatisticas(){
             );
 
 
-        }
+        }*/
 
 
 
